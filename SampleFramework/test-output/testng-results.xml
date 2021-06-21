@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="20762" started-at="2021-06-19T05:48:35Z" finished-at="2021-06-19T05:48:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="20762" started-at="2021-06-19T05:48:35Z" finished-at="2021-06-19T05:48:56Z">
+      <class name="com.practise.tests.LoginPageTest">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:com.practise.tests.LoginPageTest@ae45eb6]" name="setUP" is-config="true" duration-ms="13962" started-at="2021-06-19T05:48:35Z" finished-at="2021-06-19T05:48:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.practise.tests.LoginPageTest@ae45eb6]" name="loginTest" duration-ms="5090" started-at="2021-06-19T05:48:49Z" finished-at="2021-06-19T05:48:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.practise.tests.LoginPageTest@ae45eb6]" name="tearDown" is-config="true" duration-ms="1685" started-at="2021-06-19T05:48:54Z" finished-at="2021-06-19T05:48:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.practise.tests.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
