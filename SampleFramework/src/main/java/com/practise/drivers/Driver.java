@@ -1,26 +1,25 @@
 package com.practise.drivers;
 
-import java.util.Objects;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.practise.constants.FrameworkConstant;
 
 public class Driver {
 	
+	private Driver() {}
 	
-	 public	static WebDriver driver;
+	
+	
 
 	
 	public static void initDriver() {
 		
 		
-		if(driver==null) {
+		if(DriverManager.getDriver()==null) {
 		System.setProperty("webdriver.chrome.driver",FrameworkConstant.getChromedriverpath());
-		driver = new ChromeDriver();
-		driver.get("https://www.tamilmatrimony.com/login/");
-		driver.manage().window().maximize();
+		DriverManager.setDriver(new ChromeDriver());
+		DriverManager.getDriver().get("https://www.tamilmatrimony.com/login/");
+		DriverManager.getDriver().manage().window().maximize();
 			
 		}
 	}
@@ -28,9 +27,9 @@ public class Driver {
 	
 	public static void quitDriver() {
 		
-		if(driver!=null) {
-		driver.quit();
-		driver=null;
+		if(DriverManager.getDriver()!=null) {
+		DriverManager.getDriver().quit();
+		DriverManager.unload();
 		}
 	}
 	
