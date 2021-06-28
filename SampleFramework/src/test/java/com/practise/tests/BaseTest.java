@@ -1,7 +1,5 @@
 package com.practise.tests;
 
-import java.io.IOException;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -16,7 +14,7 @@ public class BaseTest {
 	
 	
 	@BeforeMethod
-	public void setUP() throws IOException {
+	public void setUP() throws Exception {
 		
 		Driver.initDriver();
 		

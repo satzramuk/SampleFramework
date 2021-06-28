@@ -1,7 +1,5 @@
 package com.practise.drivers;
 
-import java.io.IOException;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.practise.constants.FrameworkConstant;
@@ -15,7 +13,7 @@ public class Driver {
 	
 
 	
-	public static void initDriver() throws IOException {
+	public static void initDriver() throws Exception {
 		
 		
 		if(DriverManager.getDriver()==null) {
