@@ -1,40 +1,36 @@
 package com.practise.tests;
 
-import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.practise.drivers.DriverManager;
+import com.practise.pages.HomePage;
+import com.practise.pages.LoginPage;
+import com.utils.ReadPropertyFile;
 
 public class HomePageTest extends BaseTest{
 	
+	LoginPage loginpage;
+	HomePage homePage;
+	int implicitwait = 30;
+
 	
 	
 	private HomePageTest() {}
 	
 	
 	@Test
-	public static void homePageTestDemo() {
-		
-		        //driver.findElement(By.id("MIDP")).click();
-				DriverManager.getDriver().findElement(By.id("MIDP")).sendKeys("M7444408");
-				//driver.findElement(By.id("PASSWORD2")).click();
-				DriverManager.getDriver().findElement(By.id("PASSWORD2")).sendKeys("test4bm");
-				DriverManager.getDriver().findElement(By.className("login-btn")).click();
+	public void homePageTitleTest() throws Exception {
+		loginpage = new LoginPage();
+		homePage = loginpage.login(ReadPropertyFile.getValue("username"), ReadPropertyFile.getValue("password"));
+		implicitWaitFunctn(implicitwait, TimeUnit.SECONDS);
+		loginpage.skipBanner();
+		String pagetitle = homePage.ValidateHomePageTitle();
+		Assert.assertEquals(pagetitle, "");
 
+		
 		
 	}
-	
-	@Test
-	public static void homePageTestDemo1() {
-		
-		        //driver.findElement(By.id("MIDP")).click();
-				DriverManager.getDriver().findElement(By.id("MIDP")).sendKeys("M7444408");
-				//driver.findElement(By.id("PASSWORD2")).click();
-				DriverManager.getDriver().findElement(By.id("PASSWORD2")).sendKeys("test4bm");
-				DriverManager.getDriver().findElement(By.className("login-btn")).click();
-
-		
-	}
-
 
 }

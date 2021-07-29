@@ -40,12 +40,10 @@ public class ReadPropertyFile {
 	public static String getValue(String key) throws Exception {
 
 
-		String value ="";
-        value= prop.getProperty(key);
-		if(Objects.isNull(value)) {
+		if(Objects.isNull(prop.getProperty(key)) || Objects.isNull(key)){
 			throw new Exception("Property name " + key +" is not found. Please check config.properties");
 		}
-		return value;
+		return prop.getProperty(key);
 
 
 	}

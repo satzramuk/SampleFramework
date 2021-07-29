@@ -1,6 +1,8 @@
 package com.practise.drivers;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.practise.constants.FrameworkConstant;
 import com.utils.ReadPropertyFile;
@@ -13,16 +15,37 @@ public class Driver {
 	
 
 	
-	public static void initDriver() throws Exception {
+	public static void initDriver(String browsername,String url) throws Exception {
 		
 		
-		if(DriverManager.getDriver()==null) {
+		switch(browsername) {
+		
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver",FrameworkConstant.getChromedriverpath());
+			DriverManager.setDriver(new ChromeDriver());
+			break;
+		case "firefox":
+			System.setProperty("webdriver.chrome.driver",FrameworkConstant.getChromedriverpath());
+			DriverManager.setDriver(new FirefoxDriver());
+			break;
+		case "edge":
+			System.setProperty("webdriver.chrome.driver",FrameworkConstant.getChromedriverpath());
+			DriverManager.setDriver(new EdgeDriver());
+			break;
+			
+			
+		}
+		
+		DriverManager.getDriver().get(ReadPropertyFile.getValue("productionurl"));
+		DriverManager.getDriver().manage().window().maximize();
+		
+		/*if(DriverManager.getDriver()==null) {
 		System.setProperty("webdriver.chrome.driver",FrameworkConstant.getChromedriverpath());
 		DriverManager.setDriver(new ChromeDriver());
 		DriverManager.getDriver().get(ReadPropertyFile.getValue("productionurl"));
 		DriverManager.getDriver().manage().window().maximize();
 			
-		}
+		}*/
 	}
 
 	
